@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/MyProject" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/MyProject/demo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/MyProject/demo-impl" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/MyProject/hello-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/MyProject/hello-impl" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/MyProject/integration-tests" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/MyProject/stream-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/MyProject/stream-impl" charset="UTF-8" />
+  </component>
+</project>
