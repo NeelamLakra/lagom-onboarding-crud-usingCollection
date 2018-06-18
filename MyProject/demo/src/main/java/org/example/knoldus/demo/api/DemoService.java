@@ -14,7 +14,7 @@ import static com.lightbend.lagom.javadsl.api.transport.Method.POST;
 
 public interface DemoService extends Service {
 
-    ServiceCall<Student, Student> postStudent();
+    ServiceCall<Student, List<Student>> postStudent();
     ServiceCall<NotUsed,List<Student>> getStudent(int id);
     ServiceCall<NotUsed,List<Student>> removeStudent(int id);
 

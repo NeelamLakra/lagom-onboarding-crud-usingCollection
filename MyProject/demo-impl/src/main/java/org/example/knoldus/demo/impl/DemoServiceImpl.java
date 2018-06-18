@@ -12,7 +12,7 @@ public class DemoServiceImpl implements DemoService {
 
     List<Student> user = new ArrayList<>();
     @Override
-    public ServiceCall<Student,Student> postStudent(){
+    public ServiceCall<Student,List<Student>> postStudent(){
         return request-> {
             Student student = Student.builder()
                     .sid(request.getSid())
@@ -21,7 +21,7 @@ public class DemoServiceImpl implements DemoService {
                     .build();
 
             user.add(student);
-            return CompletableFuture.completedFuture(student);
+            return CompletableFuture.completedFuture(user);
         };
     }
 
@@ -37,8 +37,7 @@ public class DemoServiceImpl implements DemoService {
     @Override
     public ServiceCall<NotUsed,List<Student>> removeStudent(int id){
         return request ->{
-            List<Student> student = user.stream().filter(x->x.getSid()==id).collect(Collectors.toList());
-            user.remove(student);
+            user.remove(user.stream().filter(x -> x.getSid() == id).collect(Collectors.toList()).get(0));
         return CompletableFuture.completedFuture(user);
         };
 
