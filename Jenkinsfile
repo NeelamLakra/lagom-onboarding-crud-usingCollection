@@ -1,12 +1,17 @@
-pipeline {
-agent any
-stages {
-stage('compile stage') {
-  steps {
-    dir("MyProject"){
-sh 'mvn clean compile'
-}
-}
-}
+pipeline
+{
+    agent any
+         stages {
+             dir("MyProject")
+              {
+                  stage('compile stage'){
+                    steps {
+                        sh 'mvn clean compile'
+                          } }
+                stage('test stage'){
+                  steps {
+                    sh 'mvn test'
+                  }  }
+             }
 }
 }
