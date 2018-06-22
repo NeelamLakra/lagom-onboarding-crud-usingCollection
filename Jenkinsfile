@@ -5,19 +5,16 @@ pipeline
                   stage('compile stage')
                     {
                     steps {    
-                        dir("MyProject")
-                             {
+                        sh 'pushd MyProject'   
                         sh 'mvn clean compile'
-                             }
+                             
                           }
                      }
                 stage('test stage')
                         {
                         steps {
-                            dir("MyProject")
-                               {
+                            sh 'popd MyProject'
                                 sh 'mvn test'
-                                } 
                               }
                         }
                 }
