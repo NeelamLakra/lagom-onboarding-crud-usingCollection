@@ -5,7 +5,7 @@ pipeline
                   stage('compile stage')
                     {
                     steps {    
-                        sh 'pushd MyProject'   
+                        sh 'pushd /MyProject'   
                         sh 'mvn clean compile'
                              
                           }
@@ -13,7 +13,7 @@ pipeline
                 stage('test stage')
                         {
                         steps {
-                            sh 'popd MyProject'
+                            sh 'popd'
                                 sh 'mvn test'
                               }
                         }
