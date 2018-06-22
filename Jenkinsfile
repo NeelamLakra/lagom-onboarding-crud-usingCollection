@@ -1,16 +1,24 @@
 pipeline
 {
     agent any
-    dir("MyProject"){
          stages {
-                  stage('compile stage'){
-                    steps {
+                  stage('compile stage')
+                    {
+                    steps {    
+                        dir("MyProject")
+                             {
                         sh 'mvn clean compile'
-                          } }
-                stage('test stage'){
-                  steps {
-                    sh 'mvn test'
-                  }  }
-             }
-}
+                             }
+                          }
+                     }
+                stage('test stage')
+                        {
+                        steps {
+                            dir("MyProject")
+                               {
+                                sh 'mvn test'
+                                } 
+                              }
+                        }
+                }
 }
