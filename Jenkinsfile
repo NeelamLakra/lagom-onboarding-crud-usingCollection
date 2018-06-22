@@ -1,9 +1,8 @@
 pipeline
 {
     agent any
+    dir("MyProject"){
          stages {
-             dir("MyProject")
-              {
                   stage('compile stage'){
                     steps {
                         sh 'mvn clean compile'
