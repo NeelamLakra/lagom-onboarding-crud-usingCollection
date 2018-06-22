@@ -3,8 +3,10 @@ agent any
 stages {
 stage('compile stage') {
   steps {
-   sh 'cd MyProject'
+    dir{
+      "MyProject"
 sh 'mvn clean compile'
+}
 }
 }
 }
